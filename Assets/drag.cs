@@ -31,15 +31,14 @@ public class drag : MonoBehaviour {
 
 	IEnumerator testWWW(){
 
-		text.text = "start testWWW";
 
 		WWW www = new WWW ("http://60.250.133.80/3Doll/1/test3D.php");
 
 		yield return www;
 
-		text.text = www.text;
+		//text.text = www.text;
 
-		Debug.Log (www.text);
+		//Debug.Log (www.text);
 
 	}	
 

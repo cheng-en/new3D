@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SimpleObj\Demo\SimpleObjDemo.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\lovecould\Assets\newtest\script\tenstreet.cs">
     <Files>
-      <File FileName="Assets\SimpleObj\Demo\SimpleObjDemo.cs" Line="119" Column="21" />
-      <File FileName="Assets\drag.cs" Line="40" Column="3" />
+      <File FileName="..\lovecould\Assets\newtest\script\tenstreet.cs" Line="34" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

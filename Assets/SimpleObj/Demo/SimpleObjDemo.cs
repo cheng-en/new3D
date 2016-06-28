@@ -6,6 +6,7 @@
 /* games, components and freelance work */
 
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System;
 using System.IO;
@@ -15,6 +16,8 @@ public class SimpleObjDemo : MonoBehaviour {
 	public Texture2D defaultTexture;
 	public GameObject rulerIndicatorPrototype;
 	public Color[] demoColors;
+
+	public Text text;
 
 	private string url = "http://orbcreation.com/SimpleObj/Ayumi.obj";
 
@@ -61,8 +64,12 @@ public class SimpleObjDemo : MonoBehaviour {
 	void Start() {
 		overallBounds = new Bounds(Vector3.zero, Vector3.zero);
 
+
+
+		Application.ExternalCall( "InitUnity", "Init" );
+
 		// set up ruler
-		Init ("http://60.250.133.80/3Doll/head/me_151221.obj|http://60.250.133.80/3Doll/hair/MelHair001L.obj|http://60.250.133.80/3Doll/1/BasketballPoseA.obj|17.36/0/0|0/17.68/0.24|17.36/0/0|0/17.68/0.24");
+		//Init ("http://60.250.133.80/3Doll/head/me_151221.obj|http://60.250.133.80/3Doll/hair/MelHair001L.obj|http://60.250.133.80/3Doll/1/BasketballPoseA.obj|17.36/0/0|0/17.68/0.24|17.36/0/0|0/17.68/0.24");
 	}
 
 	void Update() {
@@ -107,9 +114,11 @@ public class SimpleObjDemo : MonoBehaviour {
 	}
 
 	public void GetHair(string param){
+
+		text.text = "GetHair Start";
 		
 		string[] informs = param.Split('|');
-		bodyURL = informs [0];
+		hairURL = informs [0];
 		
 		
 		StartCoroutine(IEHair());
@@ -117,6 +126,8 @@ public class SimpleObjDemo : MonoBehaviour {
 	}
 
 	public void GetBody(string param){
+
+		text.text = "Body Start";
 		
 		string[] informs = param.Split('|');
 		bodyURL = informs [0];
@@ -158,6 +169,9 @@ public class SimpleObjDemo : MonoBehaviour {
 		hair = targetObject;
 		hair.transform.localPosition = hairPosition;
 		hair.transform.rotation = hairQuate;
+
+
+		text.text = "GetHair fin";
 	}
 
 	private IEnumerator IEBody(){
@@ -170,6 +184,9 @@ public class SimpleObjDemo : MonoBehaviour {
 		hair.transform.rotation = hairQuate;
 		head.transform.localPosition = headPosition;
 		head.transform.rotation = headQuate;
+
+
+		text.text = "GetBody fin";
 	}
 
 
@@ -200,6 +217,8 @@ public class SimpleObjDemo : MonoBehaviour {
 		hair = targetObject;
 		hair.transform.localPosition = hairPosition;
 		hair.transform.rotation = hairQuate;
+
+		text.text = "init fin";
 	}
 
 	/* ------------------------------------------------------------------------------------- */
